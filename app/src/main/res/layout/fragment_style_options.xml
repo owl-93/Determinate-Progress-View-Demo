@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <import type="com.owl93.determinateprogressdemo.MainActivityViewModel.StyleMode"/>
+        <import type="com.owl93.dpb.StrokeGradient" />
+        <import type="com.owl93.dpb.TextGradient" />
+        <import type="com.owl93.dpb.Gradient"/>
+
+        <variable
+            name="vm"
+            type="com.owl93.determinateprogressdemo.MainActivityViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/style_options_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/strokeHeader"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/header_text_size"
+                android:text="Stroke Style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <RadioGroup
+                android:id="@+id/stroke_style_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/strokeHeader">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/stroke_style_color_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    style="@style/Widget.MaterialComponents.CompoundButton.RadioButton"
+                    android:textSize="12sp"
+                    android:checked="@{vm.strokeStyleMode == StyleMode.SOLID}"
+                    android:text="Color" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/stroke_style_gradient_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:textSize="12sp"
+                    android:checked="@{vm.strokeStyleMode == StyleMode.GRADIENT}"
+                    android:text="Gradient" />
+
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/stroke_gradient_size_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:layout_marginEnd="10dp"
+                android:checked="@{vm.strokeGradientSize == StrokeGradient.STROKE_ONLY}"
+                android:enabled="@{vm.strokeGradientStyle == Gradient.STYLE_RADIAL}"
+                android:text="Stroke Only"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/strokeHeader" />
+
+
+
+            <LinearLayout
+                android:id="@+id/stroke_controls_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stroke_style_radiogroup">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/stroke_solid_swatch"
+                        android:layout_width="@dimen/color_swatch_size"
+                        android:layout_height="@dimen/color_swatch_size"
+                        android:layout_gravity="end"
+                        android:layout_marginVertical="4dp"
+                        android:padding="1dp"
+                        android:background="@drawable/color_swatch_stroke"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/color_swatch"
+                        tools:visibility="visible" />
+
+                    <include
+                        android:id="@+id/stroke_gradient_controller"
+                        layout="@layout/gradient_config_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha=".2"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@color/colorOnSurface"
+                app:layout_constraintTop_toBottomOf="@id/stroke_controls_container"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textHeader"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/header_text_size"
+                android:text="Text Style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+
+            <CheckBox
+                android:id="@+id/text_gradient_size_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:textSize="12sp"
+                android:layout_marginEnd="10dp"
+                android:checked="@{vm.textGradientSize == TextGradient.TEXT_ONLY}"
+                android:enabled="@{vm.textGradientStyle != Gradient.STYLE_SWEEP}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHeader"
+                android:text="Text Only" />
+
+
+            <RadioGroup
+                android:id="@+id/text_style_radiogroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textHeader">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/text_style_color_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:textSize="12sp"
+                    android:checked="@{vm.textStyleMode == StyleMode.SOLID}"
+                    android:text="Color" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/text_style_gradient_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:textSize="12sp"
+                    android:checked="@{vm.textStyleMode == StyleMode.GRADIENT}"
+                    android:text="Gradient" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/text_controls_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_style_radiogroup">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/text_solid_swatch"
+                        android:layout_width="@dimen/color_swatch_size"
+                        android:layout_height="@dimen/color_swatch_size"
+                        android:layout_marginVertical="4dp"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/color_swatch"
+                        android:layout_gravity="end"
+                        android:padding="1dp"
+                        android:background="@drawable/color_swatch_stroke"/>
+
+                    <include
+                        android:id="@+id/text_gradient_controller"
+                        layout="@layout/gradient_config_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha=".2"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="4dp"
+                android:background="@color/colorOnSurface"
+                app:layout_constraintTop_toBottomOf="@id/text_controls_container"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/trackHeader"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="@dimen/header_text_size"
+                android:text="Track Style"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trackHeader">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:text="Alpha" />
+
+                <SeekBar
+                    android:id="@+id/track_alpha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:progress="@{vm.trackAlpha}"
+                    android:max="255" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@{Integer.toString(vm.trackAlpha)}"
+                    tools:text="50"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/track_color_swatch"
+                    android:layout_width="@dimen/color_swatch_size"
+                    android:layout_height="@dimen/color_swatch_size"
+                    android:layout_marginEnd="20dp"
+                    android:padding="1dp"
+                    android:background="@drawable/color_swatch_stroke"
+                    android:src="@drawable/color_swatch"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/trackHeader" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/color_swatch_row_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/color0"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color0" />
+
+        <ImageButton
+            android:id="@+id/color1"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color1" />
+
+        <ImageButton
+            android:id="@+id/color2"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:background="@drawable/color_swatch_stroke"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color2" />
+
+        <ImageButton
+            android:id="@+id/color3"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color3" />
+
+        <ImageButton
+            android:id="@+id/color4"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color4" />
+
+        <ImageButton
+            android:id="@+id/color5"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/color_swatch_row_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/color_swatch_row_1">
+
+
+        <ImageButton
+            android:id="@+id/color6"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color6" />
+
+        <ImageButton
+            android:id="@+id/color7"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color7" />
+
+        <ImageButton
+            android:id="@+id/color8"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color8" />
+
+        <ImageButton
+            android:id="@+id/color9"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color9" />
+
+        <ImageButton
+            android:id="@+id/color10"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color10" />
+
+        <ImageButton
+            android:id="@+id/color11"
+            android:layout_width="@dimen/color_swatch_size"
+            android:layout_height="@dimen/color_swatch_size"
+            android:layout_margin="4dp"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/color_swatch_stroke"
+            android:src="@drawable/color_swatch"
+            android:tint="@color/color11" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_swatch_row_2">
+
+        <CheckBox
+            android:id="@+id/off_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:text="Off"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/current_color_hex_code"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:helperText="@string/color_help_text"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="9" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/preview_swatch"
+                android:layout_width="@dimen/color_swatch_size"
+                android:layout_height="@dimen/color_swatch_size"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/color_swatch_stroke"
+                android:padding="1dp"
+                android:src="@drawable/color_swatch"
+                android:tint="@color/purple" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

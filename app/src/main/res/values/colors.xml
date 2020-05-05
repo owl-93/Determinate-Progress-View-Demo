@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/purple500</color>
+    <color name="colorPrimaryDark">@color/purple700</color>
+    <color name="colorAccent">@color/teal200</color>
+
+    <color name="purple200">#BB86FC</color>
+    <color name="purple500">#6200EE</color>
+    <color name="purple700">#3700B3</color>
+    <color name="teal200">#03DAC5</color>
+    <color name="teal500">#039284</color>
+
+    <color name="purple">#A431F6</color>
+    <color name="teal">#03DAC5</color>
+    <color name="blue">#0281E6</color>
+
+    <color name="colorSurface">#F5F5F5</color>
+    <color name="colorOnSurface">#222222</color>
+
+    <color name="color0">#A431F6</color>
+    <color name="color1">#03DAC5</color>
+    <color name="color2">#0281E6</color>
+    <color name="color3">#d50000</color>
+    <color name="color4">#c51162</color>
+    <color name="color5">#00c853</color>
+    <color name="color6">#aeea00</color>
+    <color name="color7">#ffab00</color>
+    <color name="color8">#ff6d00</color>
+    <color name="color9">#dd2c00</color>
+    <color name="color10">#000000</color>
+    <color name="color11">#FFFFFF</color>
+
+</resources>

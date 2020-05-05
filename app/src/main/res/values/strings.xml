@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DPB Demo</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="disable">disable</string>
+    <string name="color_help_text">#AARRGGBB | #RRGGBB</string>
+</resources>

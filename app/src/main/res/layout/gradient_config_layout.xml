@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="Gradient Type"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <Spinner
+                android:id="@+id/gradient_type_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:layout_height="100dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:layout_gravity="center|top"
+                android:text="Gradient Colors"
+                android:textSize="10dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gradient_start_color"
+                    android:layout_width="@dimen/color_swatch_size"
+                    android:layout_height="@dimen/color_swatch_size"
+                    android:layout_margin="4dp"
+                    android:padding="1dp"
+                    android:background="@drawable/color_swatch_stroke"
+                    android:src="@drawable/color_swatch"
+                    android:tint="@color/purple" />
+
+                <ImageView
+                    android:id="@+id/gradient_center_color"
+                    android:layout_width="@dimen/color_swatch_size"
+                    android:layout_height="@dimen/color_swatch_size"
+                    android:layout_margin="4dp"
+                    android:padding="1dp"
+                    android:background="@drawable/color_swatch_stroke"
+                    android:src="@drawable/color_swatch"
+                    android:tint="@color/blue" />
+
+                <ImageView
+                    android:id="@+id/gradient_end_color"
+                    android:layout_width="@dimen/color_swatch_size"
+                    android:layout_height="@dimen/color_swatch_size"
+                    android:layout_margin="4dp"
+                    android:padding="1dp"
+                    android:background="@drawable/color_swatch_stroke"
+                    android:src="@drawable/color_swatch"
+                    android:tint="@color/teal" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:text="Linear Angle"
+                android:textAlignment="center"
+                android:textSize="10dp" />
+
+            <Spinner
+                android:id="@+id/linear_angle_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

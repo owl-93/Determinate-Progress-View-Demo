@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.owl93.dpb.Direction"/>
+        <variable
+            name="vm"
+            type="com.owl93.determinateprogressdemo.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/stroke_width_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stroke" />
+
+            <SeekBar
+                android:id="@+id/stroke_size"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:progress="@{vm.strokeSize.intValue()}"
+                android:max="300"/>
+
+            <Switch
+                android:id="@+id/ccw_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:checked="@{vm.direction == Direction.CCW}"
+                android:text="CCW" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/track_width_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stroke_width_container">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Track" />
+
+            <SeekBar
+                android:id="@+id/track_size"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:progress="@{vm.trackSize.intValue()}"
+                android:max="300"/>
+
+            <Switch
+                android:id="@+id/track_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:checked="@{vm.drawTrack}"
+                android:text="Track" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/starting_angle_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/track_width_layout">
+
+            <TextView
+                android:id="@+id/starting_angle_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Angle" />
+
+            <SeekBar
+                android:id="@+id/starting_angle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="359"
+                android:progress="@{vm.startingAngle}" />
+
+            <TextView
+                android:id="@+id/starting_angle_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{Integer.toString(vm.startingAngle)}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/starting_angle_container">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/progress_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:hint="progress"
+                app:endIconDrawable="@drawable/ic_reset"
+                app:endIconMode="custom"
+                app:layout_constraintStart_toEndOf="@+id/show_text"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/progress_maxvalue"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="max"
+                app:endIconDrawable="@drawable/ic_reset"
+                app:endIconMode="custom"
+                app:layout_constraintStart_toEndOf="@+id/progress_input"
+                app:layout_constraintTop_toTopOf="@+id/progress_input">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animation Options"
+            style="@style/TextAppearance.MaterialComponents.Overline"
+            android:layout_margin="10dp"
+            android:textSize="@dimen/header_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <Spinner
+                android:id="@+id/interpolator_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/animation_duration"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:hint="Duration"
+                app:endIconDrawable="@drawable/ic_reset"
+                app:endIconMode="custom"
+                app:layout_constraintBottom_toBottomOf="@+id/animate_minus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interpolator_spinner">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

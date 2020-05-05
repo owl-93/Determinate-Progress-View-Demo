@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.owl93.dpb.TextFormat" />
+
+        <import type="com.owl93.dpb.Direction" />
+
+        <variable
+            name="vm"
+            type="com.owl93.determinateprogressdemo.MainActivityViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progress_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSurface">
+
+            <TextView
+                android:id="@+id/animating_indicator"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="animating"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <com.owl93.dpb.CircularProgressView
+                android:id="@+id/progress_view"
+                android:layout_width="@dimen/progress_view_size"
+                android:layout_height="@dimen/progress_view_size"
+                android:layout_margin="20dp"
+                app:direction="cw"
+                app:gradientStartColor="@color/purple"
+                app:gradientCenterColor="@color/blue"
+                app:gradientEndColor="@color/teal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:progress="82.45"
+                app:startingAngle="0"
+                app:trackColor="#333333"
+                app:strokeColor="@color/teal"
+                app:strokeGradientSize="stroke_only"
+                app:strokeGradientStyle="radial"
+                app:strokeGradient_linearAngle="0"
+                app:strokeWidth="20dp"
+                app:textColor="@color/colorPrimary"
+                app:textEnabled="true"
+                app:textFormat="progress"
+                app:textGradientCenterColor="@color/blue"
+                app:textGradientEndColor="@color/teal"
+                app:textGradientSize="text_only"
+                app:textGradientStartColor="@color/purple"
+                app:textGradientStyle="linear"
+                app:textGradient_linearAngle="45"
+                app:textSize="40sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progress_view">
+
+                <Button
+                    android:id="@+id/animate_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="- 10%" />
+
+                <Button
+                    android:id="@+id/animate_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="+ 10%" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/pager_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</layout>
