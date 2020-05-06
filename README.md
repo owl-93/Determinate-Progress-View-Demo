@@ -12,7 +12,7 @@ The library is built in Kotlin and supports heavy customization via XML or kotli
     <img width="50%" alt="general options" src="https://thumbs.gfycat.com/WaterloggedEuphoricBluefintuna-size_restricted.gif"/>
 </p>
 
-### General Styling options
+### Styling options
 <p>This demos the different styling options you can configure. Applying solid colors or gradients to the text as well as adjusting some track style preferences are possible. If using gradients, you can switch to a 2-color gradient or a 3-color gradient by turnig off the center color for a gradient. Linear, Sweep, and Radial gradients are supported as well as more specific options for each both linear and radial gradients.
 </p>
 <p align="center">
