@@ -1,6 +1,8 @@
 # Determinate Progress View Demo App
 
-A demo application for the [Determinate Progress View Library](https://github.com/owl-93/DeterminateProgressView)
+A demo application for the [Determinate Progress View Library](https://github.com/owl-93/DeterminateProgressView) which is a determinate circular progress bar view for android.
+
+The library is built in Kotlin and supports heavy customization via XML or kotlin code.
 
 ## GIFS
 ### General Styling options
