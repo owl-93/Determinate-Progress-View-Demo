@@ -1,2 +1,3 @@
-include ':app'
+include ':dtb', ':app'
+project(':dtb').projectDir = new File("../DeterminateProgressView")
 rootProject.name = "Determinate Progress Demo"
