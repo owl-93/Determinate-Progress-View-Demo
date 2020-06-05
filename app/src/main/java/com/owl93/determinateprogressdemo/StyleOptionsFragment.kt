@@ -67,6 +67,7 @@ class StyleOptionsFragment: Fragment() {
                 Gradient.STYLE_SWEEP -> 0
                 Gradient.STYLE_LINEAR -> 1
                 Gradient.STYLE_RADIAL -> 2
+                Gradient.STYLE_CANDY_CANE -> 3
             })
             gradient_start_color.setOnClickListener { showColorPicker(viewModel.strokeGradientStartColor) }
             gradient_center_color.setOnClickListener { showColorPicker(viewModel.strokeGradientCenterColor, true) }
@@ -126,11 +127,12 @@ class StyleOptionsFragment: Fragment() {
 
         text_solid_swatch.setOnClickListener { showColorPicker(viewModel.textSolidColor) }
         textGradientVG.apply {
-            initSpinner(gradient_type_spinner, viewModel.textGradientStyle, viewModel.gradientStyleNames, viewModel.gradientStyles)
+            initSpinner(gradient_type_spinner, viewModel.textGradientStyle, viewModel.textGradientStyleNames, viewModel.textGradientStyles)
             gradient_type_spinner.setSelection(when(viewModel.textGradientStyle.value!!) {
                 Gradient.STYLE_SWEEP -> 0
                 Gradient.STYLE_LINEAR -> 1
                 Gradient.STYLE_RADIAL -> 2
+                else -> 0
             })
             gradient_start_color.setOnClickListener { showColorPicker(viewModel.textGradientStartColor) }
             gradient_center_color.setOnClickListener { showColorPicker(viewModel.textGradientCenterColor, true) }

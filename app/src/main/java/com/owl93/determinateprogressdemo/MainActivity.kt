@@ -330,8 +330,11 @@ class MainActivityViewModel : ViewModel() {
         GRADIENT
     }
 
-    val gradientStyleNames = listOf("Sweep", "Linear", "Radial")
-    val gradientStyles = listOf(Gradient.STYLE_SWEEP, Gradient.STYLE_LINEAR, Gradient.STYLE_RADIAL)
+    val gradientStyleNames = listOf("Sweep", "Linear", "Radial", "Candy Cane")
+    val gradientStyles = listOf(Gradient.STYLE_SWEEP, Gradient.STYLE_LINEAR, Gradient.STYLE_RADIAL, Gradient.STYLE_CANDY_CANE)
+
+    val textGradientStyleNames = listOf("Sweep", "Linear", "Radial")
+    val textGradientStyles = listOf(Gradient.STYLE_SWEEP, Gradient.STYLE_LINEAR, Gradient.STYLE_RADIAL)
     val interpolatorNames = listOf(
         "Decelerate",
         "Accelerate",
