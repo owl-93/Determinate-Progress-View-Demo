@@ -205,6 +205,7 @@ class StyleOptionsFragment: Fragment() {
     }
 
     companion object {
+
         val colors = listOf(
             Color.parseColor("#A431F6"),
             Color.parseColor("#03DAC5"),
@@ -218,7 +219,6 @@ class StyleOptionsFragment: Fragment() {
             Color.parseColor("#dd2c00"),
             Color.parseColor("#000000"),
             Color.parseColor("#ffffff")
-
             )
     }
 
